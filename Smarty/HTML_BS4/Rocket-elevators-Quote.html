@@ -172,193 +172,189 @@
 					
 							<header class="heading-title heading-dotted text-center">
 								<h2>Request a Quote</h2>
-								<h3>please fill out the below form in its entirety so that we may better serve you</h3>
-								<p class="lead font-lato"></p>
 								<hr />
+								<h4>please fill out the below form in its entirety so that we may better serve you</h4>
+								<p class="lead font-lato"></p>
+								
 							</header>
 		
 		
 					<div class="">
 
-						<form action="form-handler.html" method="post" enctype="multipart/form-data" onsubmit="return display()">
+						<form action="" method="post" name="quoteForm" enctype="multipart/form-data">
 							<fieldset>
 								
 								<div class="row">
 									<div class="col-md-6 col-sm-6">
 										<label for="Type of building">Type of Building</label>
-										<select class="form-control pointer" name="Type of building">
-											<option value=""disable selected>--- Select ---</option>
-											<option value="Residential">Residential</option>
-											<option value="Commercial">Commercial</option>
-											<option value="Corporate">Corporate</option>
-											<option value="Hybrid">Hybrid</option>
-										
-										</select>	
-										
-										<button type="submit" class="btn btn-primary"></i>SELECT</button>
+										<select id="selectMe" name="selectMe">
+											<option value="select">--- Select One---</option>
+											<option value="residential">Residential</option>
+											<option value="commercial">Commercial</option>
+											<option value="corporate">Corporate</option>
+											<option value="hybrid">Hybrid</option>
+										</select>
 									</div>
-
 								</div>
-
-								<div id="residential"></div>
-
-								<di id="residential">		
-									<div class="col-md-6 col-sm-6" id="residential">
-										<label>Apartments in the building</label>
+								<!-- residential -->
+								<div class="row" id="residential" class="building_type">
+									
+									<div class="col-md-4" >
+										<label>Number of Apartments</label>
 										<label clase="input mb-10">
-										<input required type="number" id="apts" min="0" max="500">
-										</label>
-												
-									</div>
-										
-									<div class="col-md-6 col-sm-6" id="residential">
-										<label>Floors in the building</label>
-										<label clase="input mb-10">
-										<input required type="number" id="floors" min="0" max="200">
+										<input required type="number" id="residentialApts" min="0" max="500">
 										</label>
 									</div>
 										
-									<div class="col-md-6 col-sm-6" id="residential">
-										<label>Basements in the building</label>
+									<div class="col-md-4 col-sm-4">
+										<label>Number of Floors</label>
 										<label clase="input mb-10">
-										<input required type="number" id="basements" min="0" max="100">
-										</label>
-									</div>
-								</di>	
-								
-								<di class="Commercial">		
-									<div class="col-md-6 col-sm-6" id="Commercial">
-										<label>Businesses in the building</label>
-										<label clase="input mb-10">
-										<input required type="number" id="business" min="0" max="500">
-										</label>
-												
-									</div>
-										
-									<div class="col-md-6 col-sm-6">
-										<label>Floors in the building</label>
-										<label clase="input mb-10">
-										<input required type="number" id="" min="0" max="200">
+										<input required type="number" id="residentialFloors" min="0" max="200">
 										</label>
 									</div>
 										
-									<div class="col-md-6 col-sm-6">
-										<label>Parking spaces in the building</label>
+									<div class="col-md-4 col-sm-4">
+										<label>Number of Basements</label>
 										<label clase="input mb-10">
-										<input required type="number" id="" min="0" max="100">
+										<input required type="number" id="residentialBasem" min="0" max="100">
+										</label>
+									</div>
+								</div>
+								<!-- commercial -->
+								<div class= "row" id="commercial" class="building_type">		
+									
+									<div class="col-md-3 col-sm-3">
+										<label>Number of Businesses</label>
+										<label clase="input mb-10">
+										<input required type="number" id="businessCommercial" min="0" max="500">
+										</label>
+									</div>
+										
+									<div class="col-md-3 col-sm-3">
+										<label>Number of Floors</label>
+										<label clase="input mb-10">
+										<input required type="number" id="floorsCommercial" min="0" max="200">
 										</label>
 									</div>
 
-									<div class="col-md-6 col-sm-6">
+									<div class="col-md-3 col-sm-3">
+										<label>Number of Basements</label>
+										<label clase="input mb-10">
+										<input required type="number" id="basementsCommercial" min="0" max="100">
+										</label>
+									</div>
+										
+									<div class="col-md-3 col-sm-3">
+										<label>Parking spaces</label>
+										<label clase="input mb-10">
+										<input required type="number" id="parkingCommercial" min="0" max="100">
+										</label>
+									</div>
+
+									<div class="col-md-3 col-sm-3">
 										<label>Elevator cages to be deployed</label>
 										<label clase="input mb-10">
-										<input required type="number" id="" min="0" max="100">
+										<input required type="number" id="cagesElevator" min="0" max="100">
 										</label>
 									</div>
-								</di>	
-										
-								<di id="Corporate">		
-									<div class="col-md-6 col-sm-6">
+								</div>	
+								<!-- corporate -->		
+								<div class= "row" id="corporate" class="building_type">		
+									<div class="col-md-3 col-sm-3">
 										<label>Tenant Companies</label>
 										<label clase="input mb-10">
-										<input required type="number" id="" min="0" max="500">
-										</label>
-												
-									</div>
-										
-									<div class="col-md-6 col-sm-6">
-										<label>Floors in the building</label>
-										<label clase="input mb-10">
-										<input required type="number" id="" min="0" max="200">
-										</label>
-									</div>
-
-									<div class="col-md-6 col-sm-6">
-										<label>Basements in the building</label>
-										<label clase="input mb-10">
-										<input required type="number" id="" min="0" max="100">
+										<input required type="number" id="companies" min="0" max="500">
 										</label>
 									</div>
 										
-									<div class="col-md-6 col-sm-6">
-										<label>Parking spaces in the building</label>
+									<div class="col-md-3 col-sm-3">
+										<label>Number of Floors</label>
 										<label clase="input mb-10">
-										<input required type="number" id="" min="0" max="100">
+										<input required type="number" id="floorsCorporative" min="0" max="200">
 										</label>
 									</div>
 
-									<div class="col-md-6 col-sm-6">
+									<div class="col-md-3 col-sm-3">
+										<label>Number of Basements</label>
+										<label clase="input mb-10">
+										<input required type="number" id="basementsCorporative" min="0" max="100">
+										</label>
+									</div>
+										
+									<div class="col-md-3 col-sm-3">
+										<label>Parking spaces</label>
+										<label clase="input mb-10">
+										<input required type="number" id="parkingCorporative" min="0" max="100">
+										</label>
+									</div>
+
+									<div class="col-md-3 col-sm-3">
 										<label>Maximum occupants per floor</label>
 										<label clase="input mb-10">
-										<input required type="number" id="" min="0" max="100">
+										<input required type="number" id="maxOccupants" min="0" max="100">
 										</label>
 									</div>
-								</di>
-
-								<di id="Hybrid">		
-									<div class="col-md-6 col-sm-6">
-										<label>Businesses in the building</label>
+								</div>
+								<!-- hybrid -->
+								<div class= "row" id="hybrid" class="building_type" style="display:none;">		
+									<div class="col-md-3 col-sm-3">
+										<label>Number of Businesses</label>
 										<label clase="input mb-10">
-										<input required type="number" id="" min="0" max="500">
-										</label>
-												
+										<input required type="number" id="businessHybrid" min="0" max="500">
+										</label>		
 									</div>
 										
-									<div class="col-md-6 col-sm-6">
-										<label>Floors in the building</label>
+									<div class="col-md-3 col-sm-3">
+										<label>Number of Floors</label>
 										<label clase="input mb-10">
-										<input required type="number" id="" min="0" max="200">
+										<input required type="number" id="floorsHybrid" min="0" max="200">
 										</label>
 									</div>
 
-									<div class="col-md-6 col-sm-6">
-										<label>Basements in the building</label>
+									<div class="col-md-3 col-sm-3">
+										<label>Number of Basements</label>
 										<label clase="input mb-10">
-										<input required type="number" id="" min="0" max="100">
+										<input required type="number" id="basementsHybrid" min="0" max="100">
 										</label>
 									</div>
 										
-									<div class="col-md-6 col-sm-6">
-										<label>Parking spaces in the building</label>
+									<div class="col-md-3 col-sm-3">
+										<label>Parking spaces</label>
 										<label clase="input mb-10">
-										<input required type="number" id="" min="0" max="100">
+										<input required type="number" id="parkingHybrid" min="0" max="100">
 										</label>
 									</div>
 
-									<div class="col-md-6 col-sm-6">
+									<div class="col-md-3 col-sm-3">
 										<label>Maximum occupants per floor</label>
 										<label clase="input mb-10">
-										<input required type="number" id="" min="0" max="100">
+										<input required type="number" id="maxOccHybrid" min="0" max="100">
 										</label>
 									</div>
 
-									<div class="col-md-6 col-sm-6">
+									<div class="col-md-3 col-sm-3">
 										<label>Hours of activity of the building</label>
 										<label clase="input mb-10">
-										<input required type="number" id="" min="0" max="24">
+										<input required type="number" id="hoursActivity" min="0" max="24">
 										</label>
 									</div>
-								</di>
+								</div>
 
-								<div>
+								<div id = "productLine">
 									<legend>Choose the product you prefer</legend>
 
-    								<input type="radio" id="Standard" name="product">
+    								<input type="radio" id="Standard" value="7565" name="productLine">
     								<label for="Standard">Standard</label><br/>
 
-									<input type="radio" id="Premium" name="product">
+									<input type="radio" id="Premium" value="12343" name="productLine">
 									<label for="Premium">Premium</label><br/>
 
-									<input type="radio" id="Excelium" name="product">
+									<input type="radio" id="Excelium" value="15400" name="productLine">
 									<label for="Excelium">Excelium</label>
 								</div>
 							</fieldset>
 
-								<div class="row">
-									<div class="col-md-12">
-										<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i>SUBMIT</button>
-									</div>
-								</div>
+								
 						</form>
 
 					</div>
@@ -412,9 +408,8 @@
 				<div class="copyright">
 					<div class="container">
 						<ul class="float-right m-0 list-inline mobile-block">
-							<li><a href="#">Terms &amp; Conditions</a></li>
-							<li>&bull;</li>
-							<li><a href="#">Privacy</a></li>
+							
+							<li><a href="#">Privacy Policy</a></li>
 						</ul>
 						&copy; 2020 Rocket Elevators - All Rights Reserved
 					</div>
@@ -442,18 +437,10 @@
 		<!-- JAVASCRIPT FILES -->
 		<script>var plugin_path = 'assets/plugins/';</script>
 		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
-
+				
 		<script src="assets/js/scripts.js"></script>
 		
-		
-
-		<!-- REVOLUTION SLIDER -->
-		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
-		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
-		<script src="assets/js/view/demo.revolution_slider.js"></script>
-
-		<!-- PAGELEVEL SCRIPTS -->
-		<script src="assets/js/contact.js"></script>
+		<script src="assets/js/quote.js"></script>
 
 		<!-- 
 			GMAP.JS 

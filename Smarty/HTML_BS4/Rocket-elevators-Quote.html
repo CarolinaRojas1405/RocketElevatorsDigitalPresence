@@ -185,7 +185,7 @@
 							<fieldset>
 								
 								<div class="row">
-									<div class="col-md-6 col-sm-6">
+									<div class="col-md-4">
 										<label for="Type of building">Type of Building</label>
 										<select id="selectMe" name="selectMe">
 											<option value="select">--- Select One---</option>
@@ -196,164 +196,301 @@
 										</select>
 									</div>
 								</div>
+								<hr/>
+
 								<!-- residential -->
-								<div class="row" id="residential" class="building_type">
+								<div  id="residential" >
+									<div >
+										<div class="col-md-4" >
+											<label>Number of Apartments</label>
+											<input placeholder="" id="residApts" class="form-control" type="number" min="1" oninput="cageElevatorRes();">
+											
+										</div>
+											
+										<div class="col-md-4">
+											<label>Number of Floors</label>
+											<input type="number" id="residFloors" class="form-control" min="1" oninput="cageElevatorRes();">
+											</label>
+										</div>
+											
+										<div class="col-md-4">
+											<label>Number of Basements</label>
+											<input required  type="number" id="residBasem" class="form-control" min="0" oninput="cageElevatorRes();" >
+											</label>
+										</div>
+									</div>
+									<hr>
 									
-									<div class="col-md-4" >
-										<label>Number of Apartments</label>
-										<label clase="input mb-10">
-										<input required type="number" id="residentialApts" min="0" max="500">
-										</label>
+									<div class="col-md-4">
+											<label>Elevators cages to be deployed</label>
+											<input class="onFocus" type="number" id="residElevCages" readonly >
+											</label>
 									</div>
-										
-									<div class="col-md-4 col-sm-4">
-										<label>Number of Floors</label>
-										<label clase="input mb-10">
-										<input required type="number" id="residentialFloors" min="0" max="200">
-										</label>
+									
+									<hr>
+									<div >
+										<form>
+											
+											<label>Choose the product you prefer</label>
+											<label class="radio"><input type="radio" id="residStandard" name="productLine" value="standard" onclick="resPrice();"><i></i>Standard</label>
+											<label class="radio"><input type="radio" id="residPremium" name="productLine" value="premium" onclick="resPrice();"><i></i>Premium</label>
+											<label class="radio"><input type="radio" id="resiExcelium" name="productLine" value="excelium" onclick="resPrice();"><i></i>Excelium</label>
+										</form>
 									</div>
-										
-									<div class="col-md-4 col-sm-4">
-										<label>Number of Basements</label>
-										<label clase="input mb-10">
-										<input required type="number" id="residentialBasem" min="0" max="100">
-										</label>
+									<hr>
+									<div>
+										<div class="col-md-3 col-sm-4">
+											<label>Elevators Price</label>
+											<input type="number" id="elevPriceRes" readonly>
+											</label>
+										</div>
+											
+										<div class="col-md-3 col-sm-4">
+											<label>Installation fees</label>
+											<input type="number" id="instFeesRes" readonly >
+											</label>
+										</div>
+	
+										<div class="col-md-3 col-sm-4">
+											<label>Total Price</label>
+											<input d type="number" id="totalRes" readonly >
+											</label>
+										</div>
 									</div>
+
 								</div>
 								<!-- commercial -->
-								<div class= "row" id="commercial" class="building_type">		
-									
-									<div class="col-md-3 col-sm-3">
-										<label>Number of Businesses</label>
-										<label clase="input mb-10">
-										<input required type="number" id="businessCommercial" min="0" max="500">
-										</label>
-									</div>
-										
-									<div class="col-md-3 col-sm-3">
-										<label>Number of Floors</label>
-										<label clase="input mb-10">
-										<input required type="number" id="floorsCommercial" min="0" max="200">
-										</label>
-									</div>
+								<div  id="commercial" >		
+									<div>
+										<div class="col-md-4">
+											<label>Number of Businesses</label>
+											<input required type="number" id="businessCom" class="form-control" min="0" >
+											
+										</div>
+											
+										<div class="col-md-4">
+											<label>Number of Floors</label>
+											<input required type="number" id="floorsComm" class="form-control" min="1" >
+											</label>
+										</div>
 
-									<div class="col-md-3 col-sm-3">
-										<label>Number of Basements</label>
-										<label clase="input mb-10">
-										<input required type="number" id="basementsCommercial" min="0" max="100">
-										</label>
-									</div>
-										
-									<div class="col-md-3 col-sm-3">
-										<label>Parking spaces</label>
-										<label clase="input mb-10">
-										<input required type="number" id="parkingCommercial" min="0" max="100">
-										</label>
-									</div>
+										<div class="col-md-4">
+											<label>Number of Basements</label>
+											<input required type="number" id="basementsComm" class="form-control" min="0" >
+											</label>
+										</div>
+											
+										<div class="col-md-4">
+											<label>Parking spaces</label>
+											<label clase="input mb-10">
+											<input required type="number" id="parkingComm" class="form-control" min="0" >
+											</label>
+										</div>
 
-									<div class="col-md-3 col-sm-3">
-										<label>Elevator cages to be deployed</label>
-										<label clase="input mb-10">
-										<input required type="number" id="cagesElevator" min="0" max="100">
-										</label>
+										<div class="col-md-4">
+											<label>Elevator cages to be deployed</label>
+											<label clase="input mb-10">
+											<input required type="number" id="cagesElevatorComm" class="form-control" min="1" oninput= "commPrice();">
+											</label>
+										</div>
+									</div>
+									<hr>
+									<div >
+										<form>
+											
+											<label>Choose the product you prefer</label>
+											<label class="radio"><input type="radio" id="comStandard" name="productLine" value="standard" onclick="commPrice();"><i></i>Standard</label>
+											<label class="radio"><input type="radio" id="comPremium" name="productLine" value="premium" onclick="commPrice();"><i></i>Premium</label>
+											<label class="radio"><input type="radio" id="comExcelium" name="productLine" value="excelium" onclick="commPrice();"><i></i>Excelium</label>
+										</form>
+									</div>
+									<hr>
+									<div>
+										<div class="col-md-4">
+											<label>Elevators Price</label>
+											<input type="number" id="elevPriceCom" readonly>
+											</label>
+										</div>
+											
+										<div class="col-md-4">
+											<label>Installation fees</label>
+											<input type="number" id="instFeesCom" readonly >
+											</label>
+										</div>
+	
+										<div class="col-md-4">
+											<label>Total Price</label>
+											<input d type="number" id="totalCom" readonly >
+											</label>
+										</div>
 									</div>
 								</div>	
 								<!-- corporate -->		
-								<div class= "row" id="corporate" class="building_type">		
-									<div class="col-md-3 col-sm-3">
-										<label>Tenant Companies</label>
-										<label clase="input mb-10">
-										<input required type="number" id="companies" min="0" max="500">
-										</label>
-									</div>
-										
-									<div class="col-md-3 col-sm-3">
-										<label>Number of Floors</label>
-										<label clase="input mb-10">
-										<input required type="number" id="floorsCorporative" min="0" max="200">
-										</label>
+								<div id="corporate">	
+									<div>	
+										<div class="col-md-4">
+											<label>Tenant Companies</label>
+											<label clase="input mb-10">
+											<input required type="number" id="tenantCoCorp" class="form-control" min="0">
+											</label>
+										</div>
+											
+										<div class="col-md-4">
+											<label>Number of Floors</label>
+											<label clase="input mb-10">
+											<input required type="number" id="floorsCorp" class="form-control" min="1" oninput="cageElevatorCorp();">
+											</label>
+										</div>
+
+										<div class="col-md-4">
+											<label>Number of Basements</label>
+											<label clase="input mb-10">
+											<input required type="number" id="basementsCorp" class="form-control" min="0" oninput="cageElevatorCorp();">
+											</label>
+										</div>
+											
+										<div class="col-md-4">
+											<label>Parking spaces</label>
+											<label clase="input mb-10">
+											<input required type="number" id="parkingCorp" class="form-control" min="0"  >
+											</label>
+										</div>
+
+										<div class="col-md-4">
+											<label>Maximum occupants per floor</label>
+											<label clase="input mb-10">
+											<input required type="number" id="maxOccupants" class="form-control" min="0" oninput="cageElevatorCorp();">
+											</label>
+										</div>
 									</div>
 
-									<div class="col-md-3 col-sm-3">
-										<label>Number of Basements</label>
-										<label clase="input mb-10">
-										<input required type="number" id="basementsCorporative" min="0" max="100">
-										</label>
+									<hr>
+									
+									<div class="col-md-4">
+											<label>Elevators cages to be deployed</label>
+											<input class="onFocus" type="number" id="corpElevCages" readonly >
+											</label>
 									</div>
-										
-									<div class="col-md-3 col-sm-3">
-										<label>Parking spaces</label>
-										<label clase="input mb-10">
-										<input required type="number" id="parkingCorporative" min="0" max="100">
-										</label>
+									
+									<hr>
+									<div >
+										<form>
+											
+											<label>Choose the product you prefer</label>
+											<label class="radio"><input type="radio" id="corpStandard" name="productLine" value="standard" onclick="corpPrice();"><i></i>Standard</label>
+											<label class="radio"><input type="radio" id="corpPremium" name="productLine" value="premium" onclick="corpPrice();"><i></i>Premium</label>
+											<label class="radio"><input type="radio" id="corpExcelium" name="productLine" value="excelium" onclick="corpPrice();"><i></i>Excelium</label>
+										</form>
 									</div>
-
-									<div class="col-md-3 col-sm-3">
-										<label>Maximum occupants per floor</label>
-										<label clase="input mb-10">
-										<input required type="number" id="maxOccupants" min="0" max="100">
-										</label>
+									<hr>
+									<div>
+										<div class="col-md-4">
+											<label>Elevators Price</label>
+											<input type="number" id="elevPriceCorp" readonly>
+											</label>
+										</div>
+											
+										<div class="col-md-4">
+											<label>Installation fees</label>
+											<input type="number" id="instFeesCorp" readonly >
+											</label>
+										</div>
+	
+										<div class="col-md-4">
+											<label>Total Price</label>
+											<input d type="number" id="totalPriceCorp" readonly >
+											</label>
+										</div>
 									</div>
 								</div>
 								<!-- hybrid -->
-								<div class= "row" id="hybrid" class="building_type" style="display:none;">		
-									<div class="col-md-3 col-sm-3">
-										<label>Number of Businesses</label>
-										<label clase="input mb-10">
-										<input required type="number" id="businessHybrid" min="0" max="500">
-										</label>		
-									</div>
-										
-									<div class="col-md-3 col-sm-3">
-										<label>Number of Floors</label>
-										<label clase="input mb-10">
-										<input required type="number" id="floorsHybrid" min="0" max="200">
-										</label>
-									</div>
+								<div id="hybrid">		
+									<div>
+										<div class="col-md-4">
+											<label>Number of Businesses</label>
+											<label clase="input mb-10">
+											<input required type="number" id="businessHybrid" class="form-control" min="0">
+											</label>		
+										</div>
+											
+										<div class="col-md-4">
+											<label>Number of Floors</label>
+											<label clase="input mb-10">
+											<input required type="number" id="floorsHybrid" class="form-control" min="1" oninput="cageElevatorHybrid();">
+											</label>
+										</div>
 
-									<div class="col-md-3 col-sm-3">
-										<label>Number of Basements</label>
-										<label clase="input mb-10">
-										<input required type="number" id="basementsHybrid" min="0" max="100">
-										</label>
-									</div>
-										
-									<div class="col-md-3 col-sm-3">
-										<label>Parking spaces</label>
-										<label clase="input mb-10">
-										<input required type="number" id="parkingHybrid" min="0" max="100">
-										</label>
-									</div>
+										<div class="col-md-4">
+											<label>Number of Basements</label>
+											<label clase="input mb-10">
+											<input required type="number" id="basementsHybrid" class="form-control" min="0" oninput="cageElevatorHybrid();">
+											</label>
+										</div>
+											
+										<div class="col-md-4">
+											<label>Parking spaces</label>
+											<label clase="input mb-10">
+											<input required type="number" id="parkingHybrid" class="form-control" min="0">
+											</label>
+										</div>
 
-									<div class="col-md-3 col-sm-3">
-										<label>Maximum occupants per floor</label>
-										<label clase="input mb-10">
-										<input required type="number" id="maxOccHybrid" min="0" max="100">
-										</label>
-									</div>
+										<div class="col-md-4">
+											<label>Maximum occupants per floor</label>
+											<label clase="input mb-10">
+											<input required type="number" id="maxOccHybrid" class="form-control" min="0" oninput="cageElevatorHybrid();">
+											</label>
+										</div>
 
-									<div class="col-md-3 col-sm-3">
-										<label>Hours of activity of the building</label>
-										<label clase="input mb-10">
-										<input required type="number" id="hoursActivity" min="0" max="24">
-										</label>
+										<div class="col-md-4">
+											<label>Hours of activity of the building</label>
+											<label clase="input mb-10">
+											<input required type="number" id="hoursActivity" class="form-control" min="0" >
+											</label>
+										</div>
+									</div>
+									<hr>
+									
+									<div class="col-md-4">
+											<label>Elevators cages to be deployed</label>
+											<input class="onFocus" type="number" id="hybridElevCages" readonly >
+											</label>
+									</div>
+									
+									<hr>
+									<div >
+										<form>
+											
+											<label>Choose the product you prefer</label>
+											<label class="radio"><input type="radio" id="hybridStandard" name="productLine" value="standard" onclick="hybridPrice();"><i></i>Standard</label>
+											<label class="radio"><input type="radio" id="hybridPremium" name="productLine" value="premium" onclick="hybridPrice();"><i></i>Premium</label>
+											<label class="radio"><input type="radio" id="hybridExcelium" name="productLine" value="excelium" onclick="hybridPrice();"><i></i>Excelium</label>
+										</form>
+									</div>
+									<hr>
+									<div>
+										<div class="col-md-4">
+											<label>Elevators Price</label>
+											<input type="number" id="elevPriceHybr" readonly>
+											</label>
+										</div>
+											
+										<div class="col-md-4">
+											<label>Installation fees</label>
+											<input type="number" id="instFeesHybr" readonly >
+											</label>
+										</div>
+	
+										<div class="col-md-4">
+											<label>Total Price</label>
+											<input d type="number" id="totalPriceHybr" readonly >
+											</label>
+										</div>
 									</div>
 								</div>
-
-								<div id = "productLine">
-									<legend>Choose the product you prefer</legend>
-
-    								<input type="radio" id="Standard" value="7565" name="productLine">
-    								<label for="Standard">Standard</label><br/>
-
-									<input type="radio" id="Premium" value="12343" name="productLine">
-									<label for="Premium">Premium</label><br/>
-
-									<input type="radio" id="Excelium" value="15400" name="productLine">
-									<label for="Excelium">Excelium</label>
-								</div>
+								<hr />
+								
 							</fieldset>
-
+						
 								
 						</form>
 
